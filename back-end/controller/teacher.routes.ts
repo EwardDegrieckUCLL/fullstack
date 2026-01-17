@@ -34,7 +34,14 @@ const teacherRouter = express.Router();
  *               items:
  *                  $ref: '#/components/schemas/Teacher'
  */
-teacherRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {});
+teacherRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const teachers = await teacherService.getAllTeachers();
+        res.status(200).json(teachers);
+    } catch (error) {
+        next(error);
+    }
+});
 
 /**
  * @swagger
@@ -64,7 +71,20 @@ teacherRouter.get('/', async (req: Request, res: Response, next: NextFunction) =
  */
 teacherRouter.put(
     '/:teacherId/learningpath',
-    async (req: Request, res: Response, next: NextFunction) => {}
+    async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const id = Number(req.params.teacherId);
+            const learningPath = req.query.learningPath;
+            
+            if (typeof learningPath !== 'string') {
+                return res.status(400).json({ error: 'learningPath must be a string' });
+            }
+            const teacher = await teacherService.updateLearningPath(id, learningPath);
+            res.status(200).json(teacher);
+        } catch (error) {
+            next(error)
+        }
+    }
 );
 
 export { teacherRouter };
