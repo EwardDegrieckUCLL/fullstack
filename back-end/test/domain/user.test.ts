@@ -52,7 +52,7 @@ test('given: users with values, when: comparing user to those values, then: true
 });
 
 // unhappy cases
-test('given: empty username, when: creating user, then: user created with those values', () => {
+test('given: empty username, when: creating user, then: error is thrown', () => {
     //given
     //when
     const userCreation = () => {
@@ -70,7 +70,7 @@ test('given: empty username, when: creating user, then: user created with those 
     expect(userCreation).toThrow('Username is required');
 });
 
-test('given: empty first name, when: creating user, then: user created with those values', () => {
+test('given: empty first name, when: creating user, then: error is thrown', () => {
     //given
     //when
     const userCreation = () => {
@@ -88,7 +88,7 @@ test('given: empty first name, when: creating user, then: user created with thos
     expect(userCreation).toThrow('First name is required');
 });
 
-test('given: empty last name, when: creating user, then: user created with those values', () => {
+test('given: empty last name, when: creating user, then: error is thrown', () => {
     //given
     //when
     const userCreation = () => {
@@ -106,7 +106,7 @@ test('given: empty last name, when: creating user, then: user created with those
     expect(userCreation).toThrow('Last name is required');
 });
 
-test('given: empty email, when: creating user, then: user created with those values', () => {
+test('given: empty email, when: creating user, then: error is thrown', () => {
     //given
     //when
     const userCreation = () => {
@@ -124,7 +124,7 @@ test('given: empty email, when: creating user, then: user created with those val
     expect(userCreation).toThrow('Email is required');
 });
 
-test('given: empty password, when: creating user, then: user created with those values', () => {
+test('given: empty password, when: creating user, then: error is thrown', () => {
     //given
     //when
     const userCreation = () => {

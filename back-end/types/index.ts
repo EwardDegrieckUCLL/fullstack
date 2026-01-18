@@ -1,5 +1,3 @@
-import { User } from '../model/user';
-
 type Role = 'admin' | 'student' | 'teacher';
 
 type UserInput = {
@@ -18,6 +16,11 @@ type TeacherInput = {
     phase?: string;
 };
 
+type ClassroomInput = {
+    id?: number;
+    name: string;
+}
+
 type AuthenticationResponse = {
     token: string;
     username: string;
@@ -25,4 +28,4 @@ type AuthenticationResponse = {
     role: string;
 };
 
-export { Role, TeacherInput, UserInput, AuthenticationResponse };
+export { Role, TeacherInput, UserInput, AuthenticationResponse, ClassroomInput };

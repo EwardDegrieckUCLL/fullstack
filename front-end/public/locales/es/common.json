@@ -1,10 +1,15 @@
 {
   "app.title": "Examen App",
-  "general.error": "Se ha producido un error. Vuelva a intentarlo más tarde.",
+  "general": {
+    "error": "Se ha producido un error. Vuelva a intentarlo más tarde."
+  },
   "header": {
     "welcome": "Bienvenido",
     "nav": {
       "home": "Inicio",
+      "addClassroom": "Añadir aula",
+      "teachers": "Profesores",
+      "addTeacher": "Añadir profesor",
       "teams": "Grupos",
       "coaches": "Entrenadores",
       "login": "Conéctese",
@@ -24,5 +29,20 @@
   "home": {
     "title": "Bienvenido!",
     "description": "Cursos le permite ver como profesor todos los cursos que está impartiendo y como alumno todos los cursos en los que está matriculado. También puede ver cuándo están programados los cursos y los alumnos matriculados en cada curso."
+  },
+  "error": {
+    "authorization": "No tienes autorización para ver esta página."
+  },
+  "addClassroom": {
+    "label": {
+      "name": "Nombre"
+    },
+    "error": {
+      "name": "Nombre obligatorio",
+      "duplicate": "El aula ya existe",
+      "add": "No se ha podido añadir el aula"
+    },
+    "successWithId": "Se ha añadido el aula con el nombre {{name}} y el ID {{id}}",
+    "button.add": "Añadir"
   }
 }

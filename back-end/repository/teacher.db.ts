@@ -7,7 +7,6 @@ const getAllTeachers = async (): Promise<Teacher[]> => {
             include: {user:true}
         });
         return teachersPrisma.map((t) => Teacher.from(t));
-        // Run the seed.ts script again to add test data to the database.
     } catch (error) {
         throw new Error('Database error. See server log for details.');
     }

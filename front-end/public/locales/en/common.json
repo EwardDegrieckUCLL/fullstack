@@ -1,13 +1,15 @@
 {
   "app.title": "Exam App",
-  "general.error": "An error has occurred. Please try again later.",
+  "general": {
+    "error": "An error has occurred. Please try again later."
+  },
   "header": {
     "welcome": "Welcome",
     "nav": {
       "home": "Home",
-      "classrooms": "Classrooms",
+      "addClassroom": "Add classroom",
       "teachers": "Teachers",
-      "add-teacher": "Add Teacher",
+      "addTeacher": "Add Teacher",
       "login": "Login",
       "logout": "Logout"
     }
@@ -25,5 +27,20 @@
   "home": {
     "title": "Good luck with the exam!",
     "description": ""
+  },
+  "error": {
+    "authorization": "You are not authorized to view this page."
+  },
+  "addClassroom": {
+    "label": {
+      "name": "Name"
+    },
+    "error": {
+      "name": "Name is required",
+      "duplicate": "Classroom already exists",
+      "add": "Failed to add classroom"
+    },
+    "successWithId": "Added classroom with name {{name}} and ID {{id}}",
+    "button.add": "Add"
   }
 }

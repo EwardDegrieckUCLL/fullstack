@@ -14,7 +14,15 @@ export type User = {
   role?: string;
 };
 
+export type ClassroomInput = {
+  name: string;
+};
+
+export type Classroom = {
+  name: string;
+};
+
 export type StatusMessage = {
   message: string;
-  type: 'error' | 'success';
+  type: "error" | "success";
 };
