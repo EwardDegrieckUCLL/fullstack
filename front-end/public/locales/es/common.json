@@ -28,7 +28,7 @@
   },
   "home": {
     "title": "Bienvenido!",
-    "description": "Cursos le permite ver como profesor todos los cursos que está impartiendo y como alumno todos los cursos en los que está matriculado. También puede ver cuándo están programados los cursos y los alumnos matriculados en cada curso."
+    "description": "Profesores te permite ver todos los profesores y los cursos que imparten. Como administrador, también puedes añadir un aula."
   },
   "error": {
     "authorization": "No tienes autorización para ver esta página."
