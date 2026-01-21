@@ -8,6 +8,7 @@ type Props = {
 
 const TeacherOverview: React.FC<Props> = ({ teachers }: Props) => {
   const [loggedInUser, setLoggedInUser] = useState<User>(null);
+  const [databaseError, setDatabaseError] = useState<string | null>(null);
 
   useEffect(() => {
     setLoggedInUser(JSON.parse(sessionStorage.getItem("loggedInUser")));
@@ -25,15 +26,16 @@ const TeacherOverview: React.FC<Props> = ({ teachers }: Props) => {
           </thead>
           <tbody>
             {teachers.map((t) => (
-              <tr>
+              <tr key={t.id}>
                 <td>
-                  {t.user.firstName} {t.user.lastName}
+                  {t.user.lastName} {t.user.firstName}
                 </td>
                 <td>
                   {loggedInUser?.role === "admin" ? (
                     <LearningPath
                       teacherId={t.id}
                       learningPath={t.learningPath}
+                      setDatabaseError={setDatabaseError}
                     />
                   ) : (
                     t.learningPath
@@ -43,6 +45,7 @@ const TeacherOverview: React.FC<Props> = ({ teachers }: Props) => {
             ))}
           </tbody>
         </table>
+        {databaseError && <p className="text-red-600">{databaseError}</p>}
       </section>
     </>
   );
